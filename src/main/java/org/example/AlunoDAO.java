@@ -62,4 +62,11 @@ public class AlunoDAO {
                 .findFirst()
                 .orElse(null);
     }
+
+    // Método para filtrar a idade do aluno
+
+    public boolean alunoMenorDeIdade(int idade){
+        return alunos.stream()
+                .anyMatch(a -> a.getIdade()<18);
+    }
 }
